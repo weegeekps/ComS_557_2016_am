@@ -71,7 +71,7 @@ GLFWwindow *window;
 // Define some of the global variables we're using for this sample
 GLuint program;
 
-const int TRIANGLE_STRIP_ARRAY_LENGTH = 129;
+const int TRIANGLE_STRIP_ARRAY_LENGTH = 45*3;
 const int TRIANGLE_LIST_ARRAY_LENGTH = 288;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -121,16 +121,20 @@ unsigned int createTriangleStripModel(void) {
             1.0, 1.0, 1.0,
             0.0, 1.0, 3.0,
             1.0, 1.0, 3.0, // End Lower Section Top, Position = 98
-            0.0, 0.0, 0.0, // Begin Lower Section Bottom, Position = 99
-            1.0, 0.0, 0.0,
+            0.0, 0.0, 3.0, // Begin Lower First Section Bottom, Position = 99
+            1.0, 0.0, 3.0,
             0.0, 0.0, 1.0,
             1.0, 0.0, 1.0,
-            0.0, 0.0, 3.0,
-            1.0, 0.0, 3.0, // 116
-            1.0, 0.0, 0.0, // 117
-            1.0, 0.0, 1.0,
+            0.0, 0.0, 0.0,
+            1.0, 0.0, 0.0, // End Lower First Section Bottom, Position = 115
+            1.0, 0.0, 1.0, // Begin Lower Second Section Bottom, Position = 116
+            3.0, 0.0, 1.0,
+            1.0, 0.0, 0.0,
             3.0, 0.0, 0.0,
-            3.0, 0.0, 1.0, // End Lower Section Bottom, Position = 128
+            // These last two values are a little hack to get the video card to completely draw the
+            //   TRIANGLE_STRIP. I was having a problem where the card would not draw the last triangle.
+            3.0, 0.0, 1.0,
+            3.0, 0.5, 0.5, // End Lower Second Section Bottom, Position = 134
     };
 
     float *triangleStripModelColors = new float[TRIANGLE_STRIP_ARRAY_LENGTH]{
@@ -173,8 +177,10 @@ unsigned int createTriangleStripModel(void) {
             1.0, 0.0, 0.0,
             1.0, 0.0, 0.0,
             1.0, 0.0, 0.0,
+            1.0, 1.0, 0.0,
             1.0, 0.0, 0.0,
             1.0, 0.0, 0.0,
+            1.0, 1.0, 0.0,
             1.0, 0.0, 0.0,
             1.0, 0.0, 0.0,
     };
@@ -446,7 +452,7 @@ void renderTriangleStripModel(void) {
     glDrawArrays(GL_TRIANGLE_STRIP, 41, 48); // Upper Section
     glDrawArrays(GL_TRIANGLE_STRIP, 87, 12); // Lower Section Top
     glDrawArrays(GL_TRIANGLE_STRIP, 99, 18); // Bottom
-    glDrawArrays(GL_TRIANGLE_STRIP, 117, 12);
+    glDrawArrays(GL_TRIANGLE_STRIP, 116, 18);
 
     // Unbind our Vertex Array Object
     glBindVertexArray(0);
