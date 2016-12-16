@@ -1,0 +1,24 @@
+# Blender MTL File: 'Paddle - Textured.blend'
+# Material Count: 2
+
+newmtl Paddle_Back
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\amorris\\Downloads\\50-free-textures-4+normalmaps\\187.JPG
+
+newmtl Paddle_Surface
+Ns 749.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\amorris\\Downloads\\50-free-textures-4+normalmaps\\199.JPG
