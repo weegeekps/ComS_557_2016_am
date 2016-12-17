@@ -2,6 +2,8 @@
 OpenGL Breakout Game written for ISU ComS 557
 Author: Adam Morris
 
+Link to the presentation video recorded on the December 9th: https://www.youtube.com/watch?v=TiryjJS-7Ig
+
 ## Features
 
 * Bump mapping on the walls and paddles.
